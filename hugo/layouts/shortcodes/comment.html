@@ -1,0 +1,9 @@
+{{- /*
+Shortcode: comment
+- For comments with markdown files in /content
+- Usage:  {{< comment >}} ... {{< /comment >}}
+- with "{{<" and not "{{%" since inner need not be processed.
+- Note that .Inner is not used, Hugo fails with an error
+so we simply assign it to a var.
+*/}}
+{{- $junk := .Inner }}

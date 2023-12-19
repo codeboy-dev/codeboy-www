@@ -1,0 +1,6 @@
+{{- $default_id := trim (replace .RelPermalink "/" "-") "-" }}
+{{- $disqus_page_id := .Params.disqus_page_id | default $default_id }}
+ <bnc-comments
+{{- with .Params.hackernews }} hackernews="{{ . }}"{{- end }}
+{{- with .Params.disqus_page_url }} disqus-page-url="{{ . }}"{{- end }}
+ disqus-page-id="{{ $disqus_page_id }}"></bnc-comments>

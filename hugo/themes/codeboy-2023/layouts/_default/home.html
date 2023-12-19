@@ -1,0 +1,24 @@
+{{- define "main" }}
+{{- $home_bundle := $.Site.GetPage "page" "/pages/home"}}
+{{- $list_blogs := where .Site.RegularPages "Section" "blog" | first 16 }}
+  <main id="ws-home" class="container content pad-sides-for-mobile" style="margin-top:1rem;">
+    <div class="columns">
+      <div class="column is-3">
+        {{- with $home_bundle.Resources.GetMatch "welcome.md" }}{{ .Content }}{{ end }}
+      </div>
+      <div class="column is-9 ws-blog-list">
+        {{- range $i,$pg := $list_blogs }}
+        <a href="{{ .RelPermalink }}">
+          <!-- div class="button is-primary is-small is-pulled-right">Read</div -->
+          <button class="xbutton xis-small xis-primary is-pulled-right">&#x279C;</button>
+          <h1{{ if eq $i 0 }} class="mt-0"{{ end }}>{{ .Title }}</h1>
+        </a>
+        {{- /* partial "by-line.html" . */}}
+        <div class="ws-blog-summary">
+          {{ .Summary }}
+        </div>
+        {{- end }}
+      </div>
+    </div>
+  </main>
+{{ end }}

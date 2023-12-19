@@ -1,0 +1,10 @@
+
+isProd = false
+description = "CodeBoy.dev - yet another blog about computing"
+author = "Don Parakin"
+
+#-----------------------------------------------------------------------
+# External URLs:  Check these to see if they are still valid.
+#-----------------------------------------------------------------------
+[External_URLs]
+    foo = "https://foo.com/"

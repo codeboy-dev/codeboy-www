@@ -1,0 +1,38 @@
+  <nav id="ws-topnav" class="navbar container"
+    x-data="{topnav_open: false}" @click.outside="topnav_open = false"
+    role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/en/">
+        <span class="ws-topnav-title">CodeBoy<span>.dev</span></span>
+      </a>
+      <button @click="topnav_open = !topnav_open" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="navbar-menu" :class="{'is-active': topnav_open}">
+      <div class="navbar-end">
+      {{- range .Site.Menus.topnav }}
+        {{- if not .HasChildren }}
+        <a href="{{ .URL }}" class="navbar-item">
+          {{- with .Pre }}{{ . |safeHTML }}{{ else }}{{ .Name }}{{ end -}}
+        </a>
+        {{- else }}
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a{{ with .URL }} href="{{.}}"{{ end }} class="navbar-link">
+            {{- with .Pre }}{{ . |safeHTML }}{{ else }}{{ .Name }}{{ end -}}
+          </a>
+          <div class="navbar-dropdown">
+            {{- range .Children }}
+            {{- if eq .Name "navbar-divider" }}
+            <hr class="navbar-divider">
+            {{- else }}
+            <a href="{{ .URL }}" class="navbar-item">{{ .Name }}</a>
+            {{- end }}
+            {{- end }}
+          </div>
+        </div>
+        {{- end }}
+      {{- end }}
+      </div>
+    </div>
+  </nav>

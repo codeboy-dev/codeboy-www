@@ -1,0 +1,10 @@
+{{- if (.Param "toc" | default true) }}
+  {{- if gt (len .TableOfContents) 35 }}
+    <div class="ws-toc">
+      <fieldset>
+        <legend>Contents</legend>
+        {{ .TableOfContents }}
+      </fieldset>
+    </div>
+  {{- end }}
+{{- end }}

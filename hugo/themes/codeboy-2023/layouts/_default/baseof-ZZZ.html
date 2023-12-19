@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="{{ .Page.Language }}">
+
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+ <title>{{ with .Page.Title }}{{ . }} | {{ end }}{{ $.Site.Title }}</title>
+ <meta name="description" content="{{- block "description" . -}}{{- .Site.Params.description -}}{{- end -}}">
+{{- with .Site.Params.author }}
+ <meta name="author" content="{{.}}">
+{{- end }}
+ {{ hugo.Generator }}
+{{- with .OutputFormats.Get "rss"}}{{/* FIX: it escapes the valid + in type; safeHTMLAttr not work */}}
+ {{ printf "<link rel=%q href=%q title=%q type=%q/>" .Rel .Permalink $.Site.Title .MediaType.Type | safeHTML }}
+{{- end }}
+ <link rel="preconnect" href="https://www.google-analytics.com">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:300|IBM+Plex+Mono:300|Oswald:300|Material+Icons&display=swap">
+ <link rel="stylesheet" href="/built/site.bundle.css">
+</head>
+
+<body{{with .Page.Params.pageid}} data-pageid="{{.}}"{{end}}><div id="vue-app">
+ <bnc-topbar>
+{{- range .Site.Menus.main }}
+  <a class="menu-item" href="{{ .URL | relURL }}">{{ .Name }}</a>
+{{- end }}
+ </bnc-topbar>
+
+{{ block "main" . }}
+ <h3>UNDER CONSTRUCTION!</h3>
+{{ end }}
+
+ <footer id="a-footer" class="footer is-size-6">
+  <div class="container">
+   <p>
+    <a href="/privacy-policy/">Privacy Policy</a>
+    | &copy; {{ now.Year }} <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+   </p>
+  </div>
+ </footer>
+ </div>
+{{ partial "google-analytics.html" . }}
+ <script src="/built/site.bundle.js"></script>
+</body>
+
+</html>

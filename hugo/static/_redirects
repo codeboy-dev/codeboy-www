@@ -1,0 +1,6 @@
+# ----------------------------------------------------------------------
+# _redirects:  For Netlify hosting
+#   - Specified urls to be redirected by Netlify
+# ----------------------------------------------------------------------
+# URL from temporary Google Sites website (2023-05)
+#/path/to/old   /en/path/to/new/

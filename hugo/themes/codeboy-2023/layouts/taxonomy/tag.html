@@ -1,0 +1,14 @@
+{{ define "main" }}
+{{- $list_blogs := where .Pages "Section" "blog" }}
+
+{{- $tax_singular := $.Page.Data.Singular }}
+ <main class="container content pad-touch-only">
+  <h1>{{ $tax_singular }} = &ldquo;{{ .Title }}&rdquo;</h1>
+  <ul>
+{{- range $list_blogs }}
+   <li>{{ .Date.Format "2006-01-02" }}: <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+{{ end}}
+  </ul>
+ </main>
+
+{{- end }}

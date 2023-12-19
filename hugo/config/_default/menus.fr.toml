@@ -1,0 +1,4 @@
+
+main = [
+    {identifier="home", name="d'accueil", url="/fr/", weight=10},
+]

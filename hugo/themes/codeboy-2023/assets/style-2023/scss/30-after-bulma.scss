@@ -1,0 +1,104 @@
+[x-cloak] { display: none !important; }
+.pad-sides-for-mobile { padding-left: 0.5rem; padding-right: 0.5rem; }
+
+//----------------------------------------------------------------------
+#ws-topnav {
+  & .navbar-item, .navbar-link {
+    color: $cs-p50; font-family: $family-serif; }
+  background-color: transparent;
+  background: url("data:image/gif;base64,R0lGODdhAQASAPEAAABmmQAAAMlFJslFJiH5BAEAAAIALAAAAAABABIAAAIFhI8mewUAOw==") repeat-x;
+  padding-top: 18px; margin-bottom: 1rem;
+  .ws-topnav-title { font-size: 2rem; span { font-size: 50%; } }
+  border-bottom: 1px solid $cs-p50;
+}
+
+//----------------------------------------------------------------------
+#ws-home {
+  .ws-blog-list {
+    h1 { font-size:1.2rem; margin-bottom:.25rem;
+      border-top: 1px solid $cs-p50;
+      //background: url("/img/border.4-1-1.gif") repeat-x; padding-top:12px;
+    }
+    & > .ws-byline { margin-bottom:.25rem !important; }
+    & > a > button {
+      color:$cs-p50; font-size:0.75rem;
+      padding:0.15rem 0.35rem; margin-top:0.25rem;
+      border-radius:8px; border:1px solid #bbb;
+      background-color:#eee; cursor: pointer;
+    }
+    .ws-blog-summary { font-size: 18px; }
+  }
+}
+
+
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+#xxxxws-top-nav2 {
+  color: $cs-p70; font-family: $family-serif;
+  background: url("/img/border.12-3-3.gif") repeat-x;
+  padding-top: 20px; margin-bottom: 1rem;
+  display: flex; flex-flow: row nowrap;
+  & > div { flex: 0; padding-right: 1rem; }
+  div:nth-child(1) { font-size: 2rem; & > span { font-size: 50%; } }
+  div:nth-child(2) { flex: 99; }
+  div:nth-child(n+3) { padding-top: 0.5rem; }
+  div:nth-child(3) { img { min-width: 20px; } }
+  div:last-child { padding-right: 0; }
+  xxxdiv { border: 1px solid #f44; }
+}
+#ws-top-navxxx {
+  font-family: $family-serif;
+  color: $cs-p70;
+  & > div {
+    background: url("/img/border.12-3-3.gif") repeat-x;
+    padding-top: 20px;
+  }
+  .xxxnavbar-brand > .navbar-item {
+    padding: 0;
+  }
+  margin-bottom: 1rem;
+}
+
+.ws-toc {
+  fieldset {
+    border:2px solid $cs-p30;
+    padding: 0.5rem 0.5rem 1rem 1rem;
+    @include browsers(border-radius, 12px);
+    legend {
+      color: $cs-p70; font-size: .8rem; font-weight: bold;
+      padding: 0 .5rem; margin-left: .5rem;
+    }
+
+    font-size:90%; width:100%; margin:0;
+    ul { margin:0; }
+    & nav ul {
+      list-style:outside none;
+      color:#666; font-size:.8rem; xxxfont-weight:bold;
+      & ul {
+        & li { padding-left:14px; text-indent:-14px; }
+        & li:before { content: "\2013\00a0"; }  // see https://css-tricks.com/snippets/html/glyphs/
+      }
+      a { border:none; color:#666; }
+    }
+  }
+  @media screen and (max-width:640px) {
+    margin: 0 0 1rem 0;
+    width:100%;
+  }
+  @media screen and (min-width:641px) {
+    float:right; max-width:50%; min-width:240px;
+    margin: 0 0 1rem 1rem;
+  }
+}
+
+//---- For Code
+.highlight { margin-bottom:1rem; background-color: #aaa; }
+code { background-color: transparent; }
+
+
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.btest {
+  background-image: url("/img/border.4-2-2.gif");
+  background-repeat: repeat-x;
+  padding-top: 8px;
+}

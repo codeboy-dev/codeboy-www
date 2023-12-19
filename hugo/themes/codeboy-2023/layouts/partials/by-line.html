@@ -1,0 +1,11 @@
+    <p class="is-size-7 ws-byline">
+    &mdash; <time datetime="{{ .Date.Format "2006-01-02T15:04:05-0700" }}">{{ .Date.Format "2006-01-02" }}</time>
+{{- if .Params.Author }}
+    &mdash; {{ .Params.Author }}
+{{- else }}
+    &mdash; {{ .Site.Params.Author }}
+{{- end }}
+{{- with .Params.tags }}
+    &mdash; {{ delimit . ", " }}
+{{- end }}
+    </p>

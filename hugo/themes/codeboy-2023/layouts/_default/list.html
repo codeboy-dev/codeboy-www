@@ -1,0 +1,10 @@
+{{ define "main" }}
+ <main id="list" class="container content pad-touch-only">
+  <h1>{{ .Title }}</h1>
+  <ul>
+{{- range .Data.Pages }}
+   <li>{{ .Render "time-element" }} - <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+{{- end }}
+  </ul>
+ </main>
+{{ end }}

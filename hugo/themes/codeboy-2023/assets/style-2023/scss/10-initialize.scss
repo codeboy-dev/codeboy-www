@@ -1,0 +1,97 @@
+
+//======================================================================
+// Colour Scheme (cs)
+//======================================================================
+$cs-primary-h: 200; $cs-primary-s: 100%; $cs-primary-l: 30%;  // Old IBM Blue (#006699)
+$cs-accent-h: 58; $cs-accent-s: 100%; $cs-accent-l: 30%;
+//$cs-primary-h: 32; $cs-primary-s: 28%; $cs-ref-l: 60%;   // Latte;
+
+//---- Primary Colour
+$cs-p95: hsl($cs-primary-h, $cs-primary-s, 5%);
+$cs-p90: hsl($cs-primary-h, $cs-primary-s, 10%);
+$cs-p80: hsl($cs-primary-h, $cs-primary-s, 20%);
+$cs-p70: hsl($cs-primary-h, $cs-primary-s, 40%);      // rgb=#836849
+$cs-p50: hsl($cs-primary-h, $cs-primary-s, $cs-primary-l);
+$cs-p40: hsl($cs-primary-h, $cs-primary-s, 60%);
+$cs-p30: hsl($cs-primary-h, $cs-primary-s, 70%);
+$cs-p20: hsl($cs-primary-h, $cs-primary-s, 90%);
+$cs-p15: hsl($cs-primary-h, $cs-primary-s, 94%);
+$cs-p10: hsl($cs-primary-h, $cs-primary-s, 96%);      // almost white
+//---- Accent Colour
+$cs-a50: hsl($cs-accent-h,$cs-accent-s,$cs-accent-l);
+$cs-a40: hsl($cs-accent-h,$cs-accent-s,40%);
+$cs-a30: hsl($cs-accent-h,$cs-accent-s,50%);
+//---- Other Colours
+$cs-text: #444;
+$cs-bg: #f6f6f6;
+
+//======================================================================
+// Bulma Settings
+//======================================================================
+$background: $cs-bg; // hsl(50.6,100%,98.5%);
+$body-background-color: $cs-bg;
+//$control-border-width: 2px;
+//$input-border-color: transparent;
+//$input-shadow: none;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+//---- Top Navbar (top of page, with CFC logo
+$navbar-height: 4rem;
+$navbar-item-img-max-height: 80px;
+
+
+
+
+
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+$cp-p500: hsl(0,36%,42%);   // #924444 - Maroon
+$cp-a500: hsl(50,100%,60%); // #ffdd33 - Gold
+//---- CFC Primary
+$cp-p900: hsl(90,27%,20%);
+//$cp-p800: hsl(90,27%,28%);
+$cp-p700: hsl(90,27%,35%);
+//$cp-p500: hsl(90,27%,46%);
+//$cp-p400: hsl(90,27%,55%);
+$cp-p300: hsl(90,27%,65%);
+$cp-p200: hsl(90,27%,80%);
+$cp-p100: hsl(90,27%,90%);
+$cp-p050: hsl(90,27%,96%);
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+$primary: $cs-p70;
+$primary-invert: $cp-a500;
+//$text-primary: $cp-a500;
+
+$link: $cs-p70;
+$text: $cs-text;
+$text-strong: #000;
+
+$title-color: $cs-p70;
+$content-heading-color: $cs-p50;
+
+//======================================================================
+// Fonts
+//======================================================================
+// As recommended by Lighthouse, better performance if in <link> tag in the page's html.
+//@import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald:600');
+
+$body-size: 20px;
+$family-serif: Georgia, Cambria, serif;
+$family-sans-serif: Tahoma, sans-serif;
+$family-monospace: consolas, "Courier New", monospace;
+$family-code: $family-monospace;
+
+$family-primary: $family-serif;
+$family-secondary: $family-sans-serif;
+
+.title, .subtitle, h1, h2, h3 {
+  color:#f00; font-family: $family-serif; }
+
+//======================================================================
+// (Other)
+//======================================================================
+@mixin browsers ($directive, $value) {
+  -webkit-#{$directive}:#{$value}; -moz-#{$directive}:#{$value};
+  -o-#{$directive}:#{$value}; -ms-#{$directive}:#{$value};
+  #{$directive}:#{$value};
+}

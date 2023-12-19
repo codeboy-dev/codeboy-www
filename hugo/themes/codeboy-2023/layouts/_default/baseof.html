@@ -1,0 +1,23 @@
+<!doctype html>
+
+<html lang="{{ .Page.Language }}"{{ with .Params.pageid }} data-pageid="{{.}}"{{end}}>
+<head>
+    {{- partial "html/head.html" . }}
+    {{- block "inside-head" . }}{{ end -}}
+</head>
+
+<body>
+  <div id="ws-overlay"></div>
+{{ partial "html/topnav.html" . -}}
+
+{{ block "main" . }}
+  <section class="ws-content container">
+    <h3>UNDER CONSTRUCTION!</h3>
+  </section>
+{{- end }}
+
+{{- /* partialCached "html/body-footer.html" . */}}
+{{- /* partial "html/body-scripts.html" . */}}
+{{- /* partial "google-analytics.html" . */}}
+</body>
+</html>

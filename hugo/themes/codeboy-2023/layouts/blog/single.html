@@ -1,0 +1,14 @@
+{{- define "description" }}
+{{- safeHTML (trim (plainify .Summary) " \n") -}}
+{{- end }}
+
+{{- define "main" }}
+  <main class="container content pad-sides-for-mobile">
+    <h1 class="title">{{ .Title }}</h1>
+{{ partial "by-line.html" . }}
+{{ partial "table-of-contents.html" . }}
+{{ .Content | emojify }}
+    <hr>
+{{ partial "bnc-disqus" . }}
+  </main>
+{{ end }}

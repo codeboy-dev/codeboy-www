@@ -1,0 +1,15 @@
+
+main = [
+    {identifier="home", name="Home", url="/en/", weight=10},
+]
+
+topnav = [
+    {weight=10, name="Home", url="/en/", pre='<img src="/img/home.svg" width="20" alt="Home">'},
+    {weight=20, name="Blog", url="/en/blog/"},
+        {parent="Blog", weight=21, name="Blog List", url="/en/blog/"},
+        {parent="Blog", weight=22, name="Blog Tags", url="/en/tags/"},
+        {parent="Blog", weight=23, name="T-Notes", url="/en/t-notes/"},
+    {weight=30, name="More", url="/en/"},
+        {parent="More", weight=31, name="Hire", url="/en/hire/"},
+        {parent="More", weight=32, name="Contact", url="/en/contact/"}
+]

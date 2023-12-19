@@ -1,0 +1,40 @@
+#-----------------------------------------------------------------------
+# Site:  BareNakedCoder.com
+#-----------------------------------------------------------------------
+baseURL = "https://www.codeboy.dev/"
+title = "CodeBoy.dev"
+
+theme = "codeboy-2023"
+
+#---- See config/_default/module.toml for more settings
+#contentDir = "content"
+
+enableRobotsTXT = true
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+enableMissingTranslationPlaceholders = false
+
+[frontmatter]
+  #---- if file is yyyy-mm-dd-post-my-slug.md, date is from file name
+  date = [":filename", ":default"]
+
+[permalinks]
+  pages = "/:slug"
+  blog = "/blog/:year-:month/:slug"
+  t-notes = "/t-notes/:slug"
+
+[taxonomies]
+  tag = "tags"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 4
+    ordered = false
+  [markup.highlight]
+    lineNos = true
+    lineNumbersInTable = false
+    style = 'witchhazel'

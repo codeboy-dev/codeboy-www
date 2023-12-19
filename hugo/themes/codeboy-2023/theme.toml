@@ -1,0 +1,8 @@
+name = "codeboy-2023"
+license = "MIT"
+description = "Theme for www.codeboy.dev"
+min_version = "0.53"
+
+[author]
+  name = "Don Parakin"
+  homepage = "https://www.codeboy.dev"
