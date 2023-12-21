@@ -1,5 +1,5 @@
 +++
-title = "Contact The Coder"
+title = "Contact"
 slug = "contact"
 +++
 

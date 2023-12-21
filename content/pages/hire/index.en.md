@@ -1,5 +1,5 @@
 +++
-title = "Hire The Coder"
+title = "Hire"
 slug = "hire"
 +++
 
@@ -9,22 +9,25 @@ slug = "hire"
 * Available usually for short small engagements
   (a great way to see if we "fit" each other).   
 * Available always to discuss future engagements and projects.
-
+* [Contact me]({{% relref "contact" %}}).
+* 
 #### Focus
 
 * Delivering *more* business value with *less* technical risk.
   * Solutions with great ROI that don't need rewriting in 3 or 4 years.
 * Solution Design & Architecture:
   * Decades of experience designing & building higher-ROI lower-risk solutions.
+  * Explores the lastest trends in IT ... and then ignores them
+    <br>for 3 to 5 years to see which ones survived and thrived.
   * Experience working in large enterprises and small start-ups.
 * Although I have decades of experience, I still love to code:
-  * Full stack web development
+  * Web *application* development (full stack)
     * Prefer [Django](https://www.djangoproject.com/)
       so I can focus on delivering more business value.
   * Python: anything in its ecosystem.
-  * Content Management Systems
-    * Static (high volume, highly secure) with [Hugo](https://gohugo.io/).
-    * Dynamic (more active content) with [Wagtail](https://wagtail.org/).
+  * Web Content Management Systems:
+    * Static-ish (high volume, highly secure) with [Hugo](https://gohugo.io/).
+    * Dynamic-ish (more active content) with [Wagtail](https://wagtail.org/).
   * Other skills (too many to list):
     * Linux, Unix, Mainframes, Cloud(s), 
       [Docker](https://www.docker.com/),
