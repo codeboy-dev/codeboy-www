@@ -76,16 +76,16 @@ $content-heading-color: $cs-p50;
 //@import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald:600');
 
 $body-size: 20px;
-$family-serif: Georgia, Cambria, serif;
-$family-sans-serif: Tahoma, sans-serif;
-$family-monospace: consolas, "Courier New", monospace;
+$family-serif: "IBM Plex Serif", Georgia, Cambria, serif;
+$family-sans-serif: "IBM Plex Sans", Tahoma, sans-serif;
+$family-monospace: "IBM Plex Mono", "Courier New", monospace;
 $family-code: $family-monospace;
 
 $family-primary: $family-serif;
 $family-secondary: $family-sans-serif;
 
 .title, .subtitle, h1, h2, h3 {
-  color:#f00; font-family: $family-serif; }
+  color:#f00; font-family: $family-sans-serif; }
 
 //======================================================================
 // (Other)

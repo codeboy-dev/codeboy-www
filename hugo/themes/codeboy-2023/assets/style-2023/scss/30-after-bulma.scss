@@ -15,10 +15,8 @@
 //----------------------------------------------------------------------
 #ws-home {
   .ws-blog-list {
-    h1 { font-size:1.2rem; margin-bottom:.25rem;
-      border-top: 1px solid $cs-p50;
-      //background: url("/img/border.4-1-1.gif") repeat-x; padding-top:12px;
-    }
+    h1 { font-size:20px; margin-bottom:0rem; border-top: 1px solid $cs-p50; }
+    h2 { font-size:18px; margin-top:0.1rem; margin-bottom:0.25rem; }
     & > .ws-byline { margin-bottom:.25rem !important; }
     & > a > button {
       color:$cs-p50; font-size:0.75rem;

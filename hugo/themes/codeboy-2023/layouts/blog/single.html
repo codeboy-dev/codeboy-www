@@ -5,6 +5,9 @@
 {{- define "main" }}
   <main class="container content pad-sides-for-mobile">
     <h1 class="title">{{ .Title }}</h1>
+    {{- with .Param "subtitle" }}
+    <h3 style="margin-top:-25px;">&mdash; {{.}}</h3>
+    {{- end }}
 {{ partial "by-line.html" . }}
 {{ partial "table-of-contents.html" . }}
 {{ .Content | emojify }}

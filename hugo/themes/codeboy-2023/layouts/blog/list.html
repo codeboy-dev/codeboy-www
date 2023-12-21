@@ -3,7 +3,10 @@
     <h1>{{ .Title }}</h1>
     <ul>
 {{- range .Data.Pages }}
-      <li>{{ .Render "time-element" }} &mdash; <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      <li>{{ .Render "time-element" }} &mdash;
+        <a href="{{ .RelPermalink }}">{{ .Title }}
+        {{- with .Param "subtitle" }}: {{.}}{{- end }}</a>
+      </li>
 {{- end }}
     </ul>
   </main>

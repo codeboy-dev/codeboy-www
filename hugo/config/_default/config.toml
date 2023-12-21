@@ -20,7 +20,7 @@ enableMissingTranslationPlaceholders = false
 
 [permalinks]
   pages = "/:slug"
-  blog = "/blog/:year-:month/:slug"
+  blog = "/blog/:year/:month/:slug"
   t-notes = "/t-notes/:slug"
 
 [taxonomies]

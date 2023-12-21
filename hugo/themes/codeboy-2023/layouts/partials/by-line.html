@@ -5,7 +5,11 @@
 {{- else }}
     &mdash; {{ .Site.Params.Author }}
 {{- end }}
-{{- with .Params.tags }}
-    &mdash; {{ delimit . ", " }}
+{{- if .Params.tags }}
+    {{- $last_i := add -1 (len .Params.tags) }}
+    &mdash;
+    {{- range $i, $tag := .Params.tags }}
+    <a href="/en/tags/{{$tag}}/">{{$tag}}</a>{{ if ne $i $last_i }}, {{ end }}
+    {{- end }}
 {{- end }}
     </p>
