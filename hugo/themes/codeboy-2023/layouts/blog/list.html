@@ -1,12 +1,20 @@
 {{ define "main" }}
   <main id="list" class="container content pad-touch-only">
     <h1>{{ .Title }}</h1>
-    <ul>
+{{- $current_year := "9999" }}
 {{- range .Data.Pages }}
-      <li>{{ .Render "time-element" }} &mdash;
-        <a href="{{ .RelPermalink }}">{{ .Title }}
-        {{- with .Param "subtitle" }}: {{.}}{{- end }}</a>
-      </li>
+  {{- $pages_year := .Date.Format "2006" }}
+  {{- if ne $pages_year $current_year }}
+    {{- if ne $current_year "9999" }}
+    </ul>
+    {{- end }}
+    {{- $current_year = $pages_year }}
+    <p>{{ $current_year }}:</p>
+    <ul>
+  {{- end }}
+      <li>{{ .Date.Format "2006-01-02" }} &mdash; <a href="{{ .RelPermalink }}">
+        {{- .Title }}
+        {{- with .Param "subtitle" }}: {{.}}{{- end }}</a></li>
 {{- end }}
     </ul>
   </main>
