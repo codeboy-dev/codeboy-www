@@ -10,7 +10,9 @@
     "hugo:serve+debug": "hugo server --verbose --disableFastRender",
     "hugo:serve+drafts": "hugo server --buildDrafts",
     "hugo:config": "hugo config",
-    "hugo:version": "hugo version"
+    "hugo:version": "hugo version",
+    "sass:build": "themes\\codeboy-2023\\assets-src\\css\\css-build.bat build",
+    "sass:watch": "themes\\codeboy-2023\\assets-src\\css\\css-build.bat watch"
   },
   "author": "Don Parakin",
   "license": "UNLICENSED",
@@ -18,13 +20,28 @@
     "buildTags": "extended"
   },
   "dependencies": {
-    "hugo-extended": "0.120.3",
-    "bulma": "*",
+    "hugo-extended": "*",
+    "htmx.org": "*",
     "alpinejs": "*",
-    "htmx.org": "*"
+    "lit": "*",
+    "@picocss/pico": "*",
+    "sass": "*"
   },
   "repository": {
     "type": "git",
     "url": "https://gitlab.com/parakin/codeboy_www.git"
+  },
+  "jshintConfig": {
+    "undef": true,
+    "unused": true,
+    "esversion": 11,
+    "browser": true,
+    "devel": true,
+    "worker": true,
+    "globals": {},
+    "eqeqeq": true,
+    "forin": true,
+    "trailingcomma": true,
+    "varstmt": true
   }
 }

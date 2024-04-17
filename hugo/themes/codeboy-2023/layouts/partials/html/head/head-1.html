@@ -1,0 +1,50 @@
+{{- /*------------------------------------------------------------------
+    Meta Tags
+--------------------------------------------------------------------*/}}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  {{- with .Params.redirect_url }}
+  <meta http-equiv="refresh" content="0; url={{ . }}">
+  {{- end }}
+  <title>
+  {{- with .Page.Title }}{{ . }}
+    {{- with $.Page.Params.supertitle }} - {{ .|safeHTML }}{{ end }}
+    {{- with $.Page.Params.subtitle }} - {{ .|safeHTML }}{{ end }}
+  {{- end -}}
+  </title>
+  <meta name= "author" content= "
+    {{- with .Params.author }}{{.}}{{ else }}{{ $.Site.Params.author }}{{ end -}}">
+  <meta name="description" content="
+      {{- block "description" . }}
+        {{- with .Params.description }}
+          {{- plainify . }}
+        {{- else }}
+          {{- trim (plainify .Summary) " \n" }}
+        {{- end }}
+      {{- end -}}">
+  <meta name="theme-color" content="#c3d3b3">
+  <meta name="color-scheme" content="light dark">
+  {{ hugo.Generator }}
+  {{- with .OutputFormats.Get "rss"}}{{/* FIX: it escapes the valid + in type; safeHTMLAttr not work */}}
+  {{ printf "<link rel=%q href=%q title=%q type=%q/>" .Rel .Permalink $.Site.Title .MediaType.Type | safeHTML }}
+  {{- end }}
+  <link rel="icon" type="image/png" href="/favicon.png" />
+
+{{- /*------------------------------------------------------------------
+    CSS
+--------------------------------------------------------------------*/}}
+  {{- with $.Page.Params.page_css }}
+  <style>{{ . | safeCSS }}</style>
+  {{- end }}
+
+  {{- $style := resources.Get "css/website.css" | resources.Fingerprint }}
+  <link id="ws-style" rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+{{- /*------------------------------------------------------------------
+    JavaScript
+--------------------------------------------------------------------*/}}
+  {{- $js_opts := (dict "format" "iife" "target" "es2017" "minify" true) }}
+  {{- $main_js := resources.Get "js/website.js" | js.Build $js_opts | resources.Fingerprint }}
+  <script defer src="{{ $main_js.RelPermalink }}"></script>
+
+{{- /**/ -}}

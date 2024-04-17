@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+@import "scss/10-init";
+@import "scss/20-picocss";
+@import "scss/30-light";
+@import "scss/35-dark";
+@import "scss/40-styling";
+
+
+//======================================================================
+// Notes:
+//  - For light/dark theme: This website always sets data-theme="..."
+//    so don't need: @media only screen and (prefers-color-scheme: dark) {...}
+//  - For CSS variables, the last setting is used. So, overrides of PicoCSS
+//    variables must com after including PicoCSS.

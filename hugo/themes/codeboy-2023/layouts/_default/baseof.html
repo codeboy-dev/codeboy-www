@@ -1,10 +1,9 @@
 <!doctype html>
 
-<html lang="{{ .Page.Language }}"{{ with .Params.pageid }} data-pageid="{{.}}"{{end}}>
-<head>
-    {{- partial "html/head.html" . }}
-    {{- block "inside-head" . }}{{ end -}}
-</head>
+<html lang="{{ .Language.Lang }}">
+ <head>
+{{- partial "html/head/head-1.html" . }}
+ </head>
 
 <body>
   <div id="ws-overlay"></div>
