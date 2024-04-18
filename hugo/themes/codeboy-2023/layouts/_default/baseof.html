@@ -5,18 +5,14 @@
 {{- partial "html/head/head-1.html" . }}
  </head>
 
-<body>
-  <div id="ws-overlay"></div>
-{{ partial "html/topnav.html" . -}}
-
+ <body id="pg-body">
+{{ partial "html/header/topbar.html" . }}
 {{ block "main" . }}
-  <section class="ws-content container">
-    <h3>UNDER CONSTRUCTION!</h3>
-  </section>
-{{- end }}
-
-{{- /* partialCached "html/body-footer.html" . */}}
-{{- /* partial "html/body-scripts.html" . */}}
-{{- /* partial "google-analytics.html" . */}}
-</body>
+ <main id="pg-main">
+  <br><h1>Under Construction</h1>
+  <p>(from ./layouts/_default/baseof.html)</p>
+ </main>
+{{ end }}
+{{ partial "html/footer/footer-1.html" . }}
+ </body>
 </html>
