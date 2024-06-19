@@ -6,6 +6,7 @@
         cbd = "CodeBoy.dev"
 
 [fr]
+    disabled = true
     title = "CodeBoy.dev"
     languageCode = "fr"
 #    contentDir = "content"
