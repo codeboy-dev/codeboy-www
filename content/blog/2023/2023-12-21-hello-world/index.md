@@ -1,7 +1,7 @@
----
-title: Hello World
-tags: ['blogging']
----
++++
+title = "Hello World"
+tags =  ["blogging"]
++++
 
 Welcome to my blog.
 <!--more-->
