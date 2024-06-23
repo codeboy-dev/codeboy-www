@@ -2,7 +2,8 @@
   "name": "codeboy.dev",
   "version": "1.0.0",
   "description": "CodeBoy.dev Website",
-  "main": "index.js",
+  "main": "website.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "hugo:build": "hugo --cleanDestinationDir",
@@ -11,8 +12,8 @@
     "hugo:serve+drafts": "hugo server --buildDrafts",
     "hugo:config": "hugo config",
     "hugo:version": "hugo version",
-    "sass:build": "themes\\codeboy-2023\\assets-src\\css\\css-build.bat build",
-    "sass:watch": "themes\\codeboy-2023\\assets-src\\css\\css-build.bat watch"
+    "sass:build": "sass themes/codeboy-2023/assets-src/css:assets/built --style=compressed",
+    "sass:watch": "sass themes/codeboy-2023/assets-src/css:assets/built --watch --style=expanded --error-css",
   },
   "author": "Don Parakin",
   "license": "UNLICENSED",
@@ -24,6 +25,7 @@
     "htmx.org": "*",
     "alpinejs": "*",
     "lit": "*",
+    "eslint": "*",
     "@picocss/pico": "*",
     "sass": "*"
   },
