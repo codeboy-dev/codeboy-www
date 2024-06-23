@@ -7,4 +7,5 @@ layout = "home"
 
 Content here is not used in the home page.
 
-For the home page parts, look in the /content/home directory.
+For fragments/parts of the home page,
+look in `./content/pages/home`.

@@ -1,25 +1,28 @@
 {{- define "main" }}
 {{- $home_bundle := $.Site.GetPage "page" "/pages/home"}}
-{{- $list_blogs := where .Site.RegularPages "Section" "blog" | first 16 }}
-  <main id="ws-home" class="container content pad-sides-for-mobile" style="margin-top:1rem;">
-    <div class="columns">
-      <div class="column is-3">
-        {{- with $home_bundle.Resources.GetMatch "welcome.md" }}{{ .Content }}{{ end }}
+{{- $welcome_frag := $home_bundle.Resources.GetMatch "welcome.md" }}
+
+{{- $list_blogs := where .Site.RegularPages "Section" "blog" | first 11 }}
+  <main id="pg-main">
+    <div class="pg-1-3 container">
+      <div>
+        {{- with $welcome_frag }}{{ .Content }}{{ end }}
       </div>
-      <div class="column is-9 ws-blog-list">
-        {{- range $i,$pg := $list_blogs }}
-        <a href="{{ .RelPermalink }}">
-          <!-- div class="button is-primary is-small is-pulled-right">Read</div -->
-          <button class="xbutton xis-small xis-primary is-pulled-right">&#x279C;</button>
-          <h1{{ if eq $i 0 }} class="mt-0"{{ end }}>{{ .Title }}</h1>
-          {{- with .Param "subtitle" }}
+      <div class="ws-blog-list">
+        {{- range $i, $pg := $list_blogs }}
+        <article>
+          <a href="{{ .RelPermalink }}" role="button" class="ws-go">Go</a>
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{- with .Param "subtitle" }}
           <h2>&ndash; {{.}}</h2>
-          {{- end }}
-        </a>
-        {{- /* partial "by-line.html" . */}}
-        <div class="ws-blog-summary">
-          {{ .Summary }}
+        {{- end }}
+        <div class="ws-byline">
+          {{- partial "by-line.html" . }}
         </div>
+        <div class="ws-summary">
+          {{ .Summary | plainify | strings.TrimRight " \n" | safeHTML }}
+        </div>
+        </article>
         {{- end }}
       </div>
     </div>
