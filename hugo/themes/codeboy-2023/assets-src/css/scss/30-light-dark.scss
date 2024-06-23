@@ -1,0 +1,14 @@
+@use "sass:color";
+
+//================ LIGHT/DEFAULT MODE ================
+[data-theme="light"], :root:not([data-theme="dark"]) {
+  --cb-brand: #006699;
+  --cb-border-18: url(data:image/gif;base64,R0lGODdhAQASAPEAAABmmQAAAMlFJslFJiH5BAEAAAIALAAAAAABABIAAAIFhI8mewUAOw==);
+  --pico-background-color: #f00;
+}
+
+//================ DARK MODE ================
+[data-theme="dark"], :root:not([data-theme="light"]) {
+  --cb-brand: #{color.scale(#006699, $lightness:15%)};  // #008ACF
+  --cb-border-18: url(data:image/gif;base64,R0lGODdhAQASAPEAAACKzwAAAMlFJslFJiH5BAEAAAIALAAAAAABABIAAAIFhI8mewUAOw==);
+}

@@ -1,0 +1,88 @@
+@use "sass:map";
+@use "../../../../../node_modules/@picocss/pico/scss/pico";
+
+// AlpineJS: prevent "fouc" (flashes of unstyled content)
+[x-cloak] { display: none !important; }
+
+html {
+  body header { padding:0; }
+  .container { max-width: 1024px; }
+}
+
+//-------- Page's Top Nav
+.ws-topnav {
+  background:repeat-x var(--cb-border-18);
+  padding-top: 12px;
+  border-bottom:1px solid var(--cb-brand);
+  color: var(--cb-brand);
+
+  .ws-logo {
+    li a {
+      color:var(--cb-brand); font-size: 1.8rem; text-decoration: none;
+      font-family: Times, "Times New Roman", Georgia, serif;
+      span { font-size: 60%; }
+    }
+  }
+  ul:nth-child(3) {}
+}
+
+//-------- Other Components
+.ws-no-border { border:none; }
+.ws-byline { font-size:80%; }
+
+.wc-topbar {
+  display:grid;
+  grid-template-columns: min-content minmax(2rem, min-content) auto repeat(3, min-content);
+  padding-top:20px;
+  background:transparent repeat-x url("data:image/gif;base64,R0lGODdhAQASAPEAAABmmQAAAMlFJslFJiH5BAEAAAIALAAAAAABABIAAAIFhI8mewUAOw==");
+  border-bottom:1px solid #069;
+  margin-bottom:0;
+  max-width:1024px;
+
+  /*---- Left: Logo ----*/
+  *:nth-child(1) {
+    font-family: Times, "Times New Roman", Georgia, serif;
+    a { font-size: 2rem; text-decoration: none; }
+    span { font-size: 50%; }
+  }
+  /*---- Middle: ----*/
+  .wc-topbar *:nth-child(2) { background-color:#ffa; }
+  /*---- Right: Menus ----*/
+  /*---- Burger ----*/
+  /*---- Theme switcher ----*/
+
+  //.ws-topbar > div { border:2px solid green; background-color:blue; }
+
+  // .wc-topbar > * { border:1px solid red;}
+  //.wc-topbar > div, .wc-topbar > ul, .wc-topbar > nav { xxxmargin-top:20px; }
+
+}
+
+
+//--------
+.pg-1-3 {
+  display: grid;
+  grid-template-columns: minmax(70px, 1fr) 3fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+}
+
+.ws-blog-list {
+  flex: 1;
+  .ws-go { float:right;
+    font-size: 0.8rem; background-color:#069;
+    border-radius:64px; padding:0.25rem 1rem;}
+  .ws-byline { font-size: 0.6rem;
+    margin-top:-0.75rem; margin-bottom: 0.5rem; }
+  .ws-summary { font-size:1rem; }
+  h3 a { text-decoration: none; color:inherit; }
+}
+
+@each $size, $d in pico.$breakpoints {
+  @media only screen and (max-width: map.get($d, "breakpoint")) {
+    .hide-if-lt-#{$size} { display:none; }
+  }
+  @media only screen and (min-width: map.get($d, "breakpoint")) {
+    .hide-if-ge-#{$size} { display:none; }
+  }
+}
