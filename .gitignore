@@ -1,5 +1,6 @@
 
 #---- Hugo
+hugo/assets/built/
 hugo/public/
 hugo/resources/
 hugo/themes/*

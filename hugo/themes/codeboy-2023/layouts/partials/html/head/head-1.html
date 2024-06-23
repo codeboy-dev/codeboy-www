@@ -12,7 +12,7 @@
     {{- with $.Page.Params.subtitle }} - {{ .|safeHTML }}{{ end }}
   {{- end -}}
   </title>
-  <meta name= "author" content= "
+  <meta name= "author" content='
     {{- with .Params.author }}{{.}}{{ else }}{{ $.Site.Params.author }}{{ end -}}">
   <meta name="description" content="
       {{- block "description" . }}
@@ -21,7 +21,7 @@
         {{- else }}
           {{- trim (plainify .Summary) " \n" }}
         {{- end }}
-      {{- end -}}">
+      {{- end -}}'>
   <meta name="theme-color" content="#c3d3b3">
   <meta name="color-scheme" content="light dark">
   {{ hugo.Generator }}
@@ -32,18 +32,26 @@
 
 {{- /*------------------------------------------------------------------
     CSS
+      - built/website.css is built just before Hugo runs by
+        build steps invoked by x-dev/netlify/deploy.bash
 --------------------------------------------------------------------*/}}
   {{- with $.Page.Params.page_css }}
   <style>{{ . | safeCSS }}</style>
   {{- end }}
 
-  {{- $style := resources.Get "css/website.css" | resources.Fingerprint }}
+  {{- $style := resources.Get "built/website.css" | resources.Fingerprint }}
   <link id="ws-style" rel="stylesheet" href="{{ $style.RelPermalink }}">
 
 {{- /*------------------------------------------------------------------
     JavaScript
+      - js/website.js is built by Hugo's embedded esbuild.
 --------------------------------------------------------------------*/}}
-  {{- $js_opts := (dict "format" "iife" "target" "es2017" "minify" true) }}
+  {{- $js_opts := (dict
+      "format" "iife"
+      "target" "es2017"
+      "minify" true
+      "targetPath" "built/website.js"
+  ) }}
   {{- $main_js := resources.Get "js/website.js" | js.Build $js_opts | resources.Fingerprint }}
   <script defer src="{{ $main_js.RelPermalink }}"></script>
 
