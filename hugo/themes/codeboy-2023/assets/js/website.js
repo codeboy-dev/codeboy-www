@@ -1,8 +1,5 @@
 
-import "./components/topbar";
-import {page_init} from "./app/page-init";
-
-page_init();
+import "./components/ws-theme-switch.js";
 
 import Alpine from "alpinejs";
 window.Alpine = Alpine;
