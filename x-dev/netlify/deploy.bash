@@ -7,6 +7,7 @@ readonly DIVIDER="────────────────────�
 main() {
   show_versions
   do_npm_install
+  do_sass_build
   do_hugo_build
 }
 
@@ -19,16 +20,20 @@ show_versions() {
   # hugo version
 }
 
-# ---------------- Pre-Build ----------------
 do_npm_install() {
-  echo -e "\n${DIVIDER}\nTASK: Hugo: npm install"
+  echo -e "\n${DIVIDER}\nTASK: npm install"
   cd "${ROOT_DIR}/hugo"
   npm install
 }
 
-# ---------------- Build ----------------
+do_sass_build() {
+  echo -e "\n${DIVIDER}\nTASK: npm run sass:build"
+  cd "${ROOT_DIR}/hugo"
+  npm run sass:build
+}
+
 do_hugo_build() {
-  echo -e "\n${DIVIDER}\nTASK: Hugo: Build"
+  echo -e "\n${DIVIDER}\nTASK: npm run hugo:build"
   cd "${ROOT_DIR}/hugo"
   npm run hugo:build
 }
