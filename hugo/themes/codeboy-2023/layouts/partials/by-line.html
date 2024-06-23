@@ -1,15 +1,19 @@
-    <p class="is-size-7 ws-byline">
-    &mdash; <time datetime="{{ .Date.Format "2006-01-02T15:04:05-0700" }}">{{ .Date.Format "2006-01-02" }}</time>
-{{- if .Params.Author }}
-    &mdash; {{ .Params.Author }}
-{{- else }}
-    &mdash; {{ .Site.Params.Author }}
-{{- end }}
+{{- $date := .Date.Format "2006-01-02" }}
+{{- $author := .Params.Author | default .Site.Params.Author }}
+
+{{- $p1 := printf "&mdash; <time datetime=\"%s\">" $date }}
+{{- $p2 := print $date "</time>" }}
+{{- $p3 := print " &mdash; " $author }}
+{{- print $p1 $p2 $p3 | safeHTML }}
+
 {{- if .Params.tags }}
-    {{- $last_i := add -1 (len .Params.tags) }}
-    &mdash;
-    {{- range $i, $tag := .Params.tags }}
-    <a href="/en/tags/{{$tag}}/">{{$tag}}</a>{{ if ne $i $last_i }}, {{ end }}
-    {{- end }}
+  {{- print " &mdash; " | safeHTML }}
+  {{- $tags := slice }}
+  {{- range .Params.tags }}
+    {{- $html := print "<a href=\"/en/tags/" . "\">" . "</a>" }}
+    {{- $tags = $tags | append $html }}
+  {{- end }}
+  {{- print (delimit $tags ", ") | safeHTML }}
 {{- end }}
-    </p>
+
+{{- /**/ -}}

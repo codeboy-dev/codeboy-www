@@ -8,7 +8,9 @@
     {{- with .Param "subtitle" }}
     <h3 style="margin-top:-25px;">&mdash; {{.}}</h3>
     {{- end }}
-{{ partial "by-line.html" . }}
+    <p class="ws-byline">
+      {{ partial "by-line.html" . }}
+    </p>
 {{ partial "table-of-contents.html" . }}
 {{ .Content | emojify }}
     <hr>
