@@ -1,0 +1,62 @@
+  <header id="pg-header">
+    <div class="container">
+      <nav class="ws-topnav">
+        <ul class="ws-logo">
+          <li><a href="/en/">CodeBoy<span>.dev</span></a></li>
+        </ul>
+        <ul></ul>
+        <ul>
+          <li>
+            <details class="dropdown">
+              <summary role="menu">Blog</summary>
+              <ul>
+                <li><a href="{{ relref . "blog" }}">Blog List</a></li>
+                <li><a href="{{ "/tags/" | relLangURL }}">Blog Tags</a></li>
+                <li><a href="{{ relref . "t-notes" }}">T-Notes</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="dropdown">
+              <summary role="menu">More</summary>
+              <ul>
+                <li><a href="{{ relref . "pages/hire" }}">Hire</a></li>
+                <li><a href="{{ relref . "pages/contact" }}">Contact</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><ws-theme-switch></ws-theme-switch></li>
+        </ul>
+      </nav>
+    </div>
+    <!--div class="wc-topbar container">
+      <div><a href="/en/">CodeBoy<span>.dev</span></a></div>
+      <div></div>
+      <nav>
+        <ul>
+          <li class="hide-if-lt-sm">
+            <details class="dropdown">
+              <summary class="wc-dropdown">Blog</summary>
+              <ul>
+                <li><a href="#">Blog List</a></li>
+                <li><a href="#">Blot Tags</a></li>
+                <li><a href="#">T-Notes</a></li>
+              </ul>
+            </details>
+          </li>
+          <li class="hide-if-lt-sm">
+            <details class="dropdown">
+              <summary class="wc-dropdown">More</summary>
+              <ul>
+                <li><a href="#">Hire</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </nav>
+      <div>(burger)</div>
+      <div>(theme_switch)</div>
+    </div-->
+  </header>
+{{- /**/ -}}
