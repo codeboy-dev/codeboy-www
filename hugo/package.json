@@ -13,7 +13,8 @@
     "hugo:config": "hugo config",
     "hugo:version": "hugo version",
     "sass:build": "sass themes/codeboy-2023/assets-src/css:assets/built --style=compressed",
-    "sass:watch": "sass themes/codeboy-2023/assets-src/css:assets/built --watch --style=expanded --error-css"
+    "sass:watch": "sass themes/codeboy-2023/assets-src/css:assets/built --watch --style=expanded --error-css",
+    "site:build": "npm run sass:build && npm run hugo:build"
   },
   "author": "Don Parakin",
   "license": "UNLICENSED",
